@@ -4,9 +4,19 @@
 <article>
     <header>
         <h1><?php the_title(); ?></h1>
+        </header>
         <div class="content">
             <?php the_content();?>
         </div>
-</header>
+        <footer>
+            <?php
+        the_posts_pagination( array(
+				'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
+				'next_text'          => __( 'Next page', 'twentyfifteen' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
+            ) );
+            ?>
+            </footer>
 </article>
+        <?php endwhile;?>
 <?php get_footer();?>
